@@ -116,8 +116,27 @@
   <div class="hero-slider">
     <div data-glide-el="track" class="glide__track">
       <div class="glide__slides">
-            
-      <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/bus.jpg'); ?>);">
+        <?php 
+            $homepageHeroSlides = new WP_Query(array(
+              'posts_per_page' => 5,
+              'post_type' => 'hero-slide'
+            ));
+                
+            while($homepageHeroSlides->have_posts()){
+              $homepageHeroSlides->the_post(); ?>    
+              
+              <div class="hero-slider__slide" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+                <div class="hero-slider__interior container">
+                  <div class="hero-slider__overlay">
+                    <h2 class="headline headline--medium t-center"><?php the_title();?></h2>
+                    <p class="t-center"><?php echo get_post_meta(get_the_ID(), 'hero-slide_subtitle', true)?></p>
+                    <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
+                  </div>
+                </div>
+              </div>
+            <?php } ?> 
+
+      <!-- <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/bus.jpg'); ?>);">
           <div class="hero-slider__interior container">
             <div class="hero-slider__overlay">
               <h2 class="headline headline--medium t-center">Free Transportation</h2>
@@ -144,7 +163,7 @@
             </div>
           </div>
         </div>              
-      </div>
+      </div> -->
 
       </div>
       <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]"></div>
