@@ -89,7 +89,7 @@
             // Like Post Type  
             register_post_type('like', array(
                 'supports' => array('title'),
-                'public' => false,
+                'public' => true,
                 'show_ui' => true,
                 'labels' => array(
                     'name' => 'Likes',
@@ -100,5 +100,20 @@
                 ),
                 'menu_icon' => 'dashicons-heart'
             ));  
+
+            // Hero-Slide Post Type  
+            register_post_type('hero-slide', array(
+                'supports' => array('title', 'thumbnail'),
+                'public' => false,
+                'show_ui' => true,
+                'labels' => array(
+                    'name' => 'Hero-Slides',
+                    'add_new_item' => 'Add New Hero-Slide',
+                    'edit_item' => 'Edit Hero-Slide',
+                    'all_items' => 'All Hero-Slides',
+                    'singular_name' => 'Hero-Slide'
+                ),
+                'menu_icon' => 'dashicons-images-alt2'
+            ));
         }
         add_action('init', 'university_post_types');
