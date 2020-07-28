@@ -1,0 +1,4 @@
+!.gitignore
+!wp-content/
+**/node_modules
+**/wp-config/*
