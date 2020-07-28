@@ -25,7 +25,7 @@ if(strstr($_SERVER['SERVER_NAME'], 'fictional-university.local')){
 	define( 'DB_PASSWORD', 'root' );
 	define( 'DB_HOST', 'localhost' );
 }else{
-	define( 'DB_NAME', 'db895ybn53p3as' );
+	define( 'DB_NAME', 'dbcv8aeg3wrgux' );
 	define( 'DB_USER', 'u5ejz9bctr4sv' );
 	define( 'DB_PASSWORD', 'BlueNoteJam' );
 	define( 'DB_HOST', '127.0.0.1' );
