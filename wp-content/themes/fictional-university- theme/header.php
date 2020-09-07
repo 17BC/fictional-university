@@ -39,7 +39,7 @@
             <a href="<?php echo esc_url(site_url('/my-notes'));?>" class="btn btn--small btn--orange float-left push-right">My Notes</a>
             <a href="<?php echo wp_logout_url();?>" class="btn btn--small  btn--dark-orange float-left btn--with-photo">
             <span class="site-header__avatar"><?php echo get_avatar(get_current_user_id(), 60)?></span>
-            <span class="btn__text">Logout</span>
+            <span class="btn__text"><?php global $current_user; get_currentuserinfo(); echo $current_user->user_login?></span>
             </a>
           <?php } else { ?>
             <a href="<?php echo wp_login_url();?>" class="btn btn--small btn--orange float-left push-right">Login</a>

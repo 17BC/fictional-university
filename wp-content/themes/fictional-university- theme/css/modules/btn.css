@@ -4,7 +4,7 @@
   border-radius: 4px;
   overflow: hidden;
   text-decoration: none;
-  color: #FFF;
+  color: #FFF; 
   font-size: 1.19rem;
   padding: 12px 24px;
   border: none;
@@ -31,10 +31,19 @@
 
   &--dark-orange {
     background-color: $darkOrange;
+    
   }
 
   &--dark-orange:hover {
     background: linear-gradient($darkOrange, color($darkOrange b(+40%) s(+80%)));
+    /* background-color: lawngreen; */
+    content: "Logout";
+  }
+  &--dark-orange:hover span{
+    display: none;
+  }
+  &--dark-orange:hover:before{
+    content: "Logout";
   }
 
   &--blue {
